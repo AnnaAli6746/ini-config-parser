@@ -47,3 +47,10 @@ Exported names: `parse`, `stringify`.
 - `parse(text: string): IniConfig` — parse INI text into a config object.
 - `stringify(config: IniConfig): string` — serialize a config object back to INI text.
 - `IniConfig` — a TypeScript-style JSDoc typedef describing the shape: an object mapping section names (or `""` for top-level) to objects of nested primitive values. It is not a runtime export; import `parse` and `stringify` only.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
