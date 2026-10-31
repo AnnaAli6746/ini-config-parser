@@ -1,6 +1,6 @@
 {
   "name": "ini-config-parser",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Parses and serializes INI configuration files handling sections, nested keys, comments, and type coercion.",
   "type": "module",
   "main": "src/index.js",
